@@ -2,7 +2,7 @@
 Hash based signatures based upon Lamport OTS, but you can keep signing (implemented in python)
 
 
-## Installation 
+## Download
 
 All the code is just in a single ~420 line file. Simply download the file like this:
 
