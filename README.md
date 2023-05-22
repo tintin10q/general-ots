@@ -4,9 +4,13 @@ Hash based signatures based upon Lamport OTS, but you can keep signing (implemen
 
 ## Installation 
 
-All the code is just in a single ~420 line file. Download it like this:
+All the code is just in a single ~420 line file. Simply download the file like this:
+
+`wget https://raw.githubusercontent.com/tintin10q/general-ots/main/general_ots.py`
 
 or
+
+`curl https://raw.githubusercontent.com/tintin10q/general-ots/main/general_ots.py > general_ots.py`
 
 ## Usage:
 
@@ -67,7 +71,7 @@ To sign messages $M_1, i = 1, 2, ...$ the signer operates as follows:
 2. Compute $s_{i,OTS} = Sign_sk_{i}, (H1(Mi, pki+1))$ where $Sign_{sk_i}$, is the signing algorithm of
 [Lamport's OTS](https://en.wikipedia.org/wiki/Lamport_signature) using the secret key $sk_i$, and $H1$ some hash function;
 3. Construct the signature $σ = (M_i, pk_{i+1}, S_{i,OTS}, σ_{i-1})$;
-4. Add $(M_i, pk_{i-1}, sk_{i+1}, S_{i,OTS}) to the state S.
+4. Add $(M_i, pk_{i-1}, sk_{i+1}, S_{i,OTS})$ to the state S.
 
 ###  Verification: 
 
