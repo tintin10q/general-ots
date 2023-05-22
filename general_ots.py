@@ -231,9 +231,9 @@ def genkey() -> OTSkey:
     l is the length of a message in bits
     n is the length of every item in the secret key matrix
 
-    the length of every item in the public key matrix is the output length of H H H H
+    the length of every item in the public key matrix is the output length of H
 
-    The idea is not that you share this public key already to people
+    The idea is that you share this public key already to people before you sign something.
     """
 
     l = 256
