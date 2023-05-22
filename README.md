@@ -54,6 +54,9 @@ for i in range(12):
     print(f"SignatureChain: {i + 1} = {len(OTSBob.sign(b'').to_bytes())} bytes")
 ```
 
+You can also export as `.toml` files (which looks way better) but then you need to install the toml dependency using:
+`pip install toml`. 
+
 ## The General OTS protocol: 
 
 [Sha3-256](https://en.wikipedia.org/wiki/SHA-3) is used as both H0 and H1.
