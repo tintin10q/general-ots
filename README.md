@@ -111,7 +111,7 @@ with $m = m_1...m_l$, output the signature $(x_{1,m_1}, x_{l,m_l})$.
 
 ###  Verification: 
 
-On put of a public key $pk$ as above and a message $m \in \textbraceleft 1,0\textbraceright^l$
+On input of a public key $pk$ as above and a message $m \in \textbraceleft 1,0\textbraceright^l$
 with $m = m_1...m_l$, and a signature $σ = (x_1,...x_l)$ output 1 if and only if $H(x_i) = y_{i,m_i}$ for all 1 $\geq i \geq l$.
 
 ### Example:
