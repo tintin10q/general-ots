@@ -71,7 +71,7 @@ You can also export as `.toml` files (which looks way better) but then you need 
 To sign messages $M_1, i = 1, 2, ...$ the signer operates as follows:
 
 1. Generate a new key pair $(sk_{i+1}, pk_{i+1});$
-2. Compute $s_{i,OTS} = Sign_sk_{i}, (H1(Mi, pki+1))$ where $Sign_{sk_i}$, is the signing algorithm of
+2. Compute $s_{i,OTS} = Sign_sk_{i}, (H1(M_i, pk_i+1))$ where $Sign_{sk_i}$, is the signing algorithm of
 [Lamport's OTS](https://en.wikipedia.org/wiki/Lamport_signature) using the secret key $sk_i$, and $H1$ some hash function;
 3. Construct the signature $σ = (M_i, pk_{i+1}, S_{i,OTS}, σ_{i-1})$;
 4. Add $(M_i, pk_{i-1}, sk_{i+1}, S_{i,OTS})$ to the state S.
@@ -80,7 +80,7 @@ To sign messages $M_1, i = 1, 2, ...$ the signer operates as follows:
 
 To verify the signature $σ_i = (M_i, pk_{i+1}, S_{i,OTS}, σ_{i-1})$:
 
-1. Check $Vf_{pk_j}(M_j, pk_{j+1},S_j,OTS) = 1$ for all $j \in \{1, 2,...,i\}$
+- Check $Vf_{pk_j}(M_j, pk_{j+1},S_j,OTS) = 1$ for all $j \in \{1, 2,...,i\}$
 
 
 ## Lamport OTS Protocol 
@@ -111,8 +111,8 @@ with $m = m_1...m_l$, output the signature $(x_{1,m_1}, x_{l,m_l})$.
 
 ###  Verification: 
 
-On input of a public key $pk$ as above and a message $m \in \{0,1\}^l$
-with $m = m_1...m_l$, and a signature $σ = (x_1,...x_l)$ output 1 if and only if $H(x_i) = y_{i,m_i})$ for all 1 $\geq i \geq l$.
+On input of a public key $pk$ as above and a message $m \in ${1,0}$^l$
+with $m = m_1...m_l$, and a signature $σ = (x_1,...x_l)$ output 1 if and only if $H(x_i) = y_{i,m_i}$ for all 1 $\geq i \geq l$.
 
 ### Example:
 
