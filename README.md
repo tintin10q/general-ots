@@ -80,7 +80,7 @@ To sign messages $M_1, i = 1, 2, ...$ the signer operates as follows:
 
 To verify the signature $σ_i = (M_i, pk_{i+1}, S_{i,OTS}, σ_{i-1})$:
 
-- Check $Vf_{pk_j}(M_j, pk_{j+1},S_j,OTS) = 1$ for all $j \in \{1, 2,...,i\}$
+- Check $Vf_{pk_j}(M_j, pk_{j+1},S_j,OTS) = 1$ for all $j \in \textbraceleft 1, 2,...,i \textbraceright$
 
 
 ## Lamport OTS Protocol 
@@ -88,8 +88,8 @@ To verify the signature $σ_i = (M_i, pk_{i+1}, S_{i,OTS}, σ_{i-1})$:
 The [Lamport OTS](https://en.wikipedia.org/wiki/Lamport_signature) signature is defined like this:
 
 ### Key Generation:
-On input of $\{0,1\}^n$, proceed as follows for $i \in {1,l}$:
-1. Choose uniform $x_{i,0},x_{i,1} \in {0,1}^n$ 
+On input of $\{0,1\}^n$, proceed as follows for $i \in \textbraceleft 1,l\textbraceright$:
+1. Choose uniform $x_{i,0},x_{i,1} \in \textbraceleft 0,1\textbraceright^n$ 
 2. Compute $y_{i,0} := H(X_{i,0})$ and $y_{i,1} := H(X_{i,1})$
 
 The public and private keys are 
@@ -105,13 +105,13 @@ public key = [ y_{1,0},  y_{2, 0}, y_{3, 0}, ..., y_{l,0} ] = [ H(x_{1,0}),  H(x
 ```
 
 ### Signing: 
-On input of a private key $sk$ as above and a message $m \in \{0,1\}^l$ 
+On input of a private key $sk$ as above and a message $m \in \textbraceleft 0,1\textbraceright^l$ 
 with $m = m_1...m_l$, output the signature $(x_{1,m_1}, x_{l,m_l})$.
 
 
 ###  Verification: 
 
-On input of a public key $pk$ as above and a message $m \in ${1,0}$^l$
+On put of a public key $pk$ as above and a message $m \in \textbraceleft 1,0\textbraceright^l$
 with $m = m_1...m_l$, and a signature $σ = (x_1,...x_l)$ output 1 if and only if $H(x_i) = y_{i,m_i}$ for all 1 $\geq i \geq l$.
 
 ### Example:
